@@ -9,13 +9,15 @@ ENV PYTHONUNBUFFERED=1 \
     PATH="$POETRY_HOME/bin:$PATH"
 
 # Instala dependências e Poetry
-RUN apt-get update && apt-get install --no-install-recommends -y \
-        curl build-essential libpq-dev gcc \
-    && curl -sSL https://install.python-poetry.org | python3 - \
-    && poetry --version \
-    && apt-get purge --auto-remove -y build-essential \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y \
+        curl build-essential libpq-dev gcc && \
+    curl -sSL https://install.python-poetry.org | python - && \
+    /opt/poetry/bin/poetry --version && \
+    apt-get purge --auto-remove -y build-essential && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+ENV PATH="/opt/poetry/bin:$PATH"
 
 WORKDIR /app
 

@@ -4,19 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('product', '0001_initial'),
+        ("product", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='product',
-            name='categories',
+            model_name="product",
+            name="categories",
         ),
         migrations.AddField(
-            model_name='product',
-            name='category',
-            field=models.ManyToManyField(blank=True, to='product.Category'),
+            model_name="product",
+            name="category",
+            field=models.ManyToManyField(blank=True, to="product.Category"),
         ),
     ]

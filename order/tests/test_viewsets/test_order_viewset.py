@@ -11,7 +11,6 @@ from product.models import Product
 
 
 class TestOrderViewSet(APITestCase):
-
     client = APIClient()
 
     def setUp(self):
@@ -24,8 +23,7 @@ class TestOrderViewSet(APITestCase):
     def test_order(self):
         user = UserFactory()
         self.client.force_authenticate(user=user)
-        response = self.client.get(
-            reverse("order-list", kwargs={"version": "v1"}))
+        response = self.client.get(reverse("order-list", kwargs={"version": "v1"}))
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 

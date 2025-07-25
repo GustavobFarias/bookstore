@@ -1,4 +1,3 @@
-
 import factory
 
 from product.models import Category, Product
