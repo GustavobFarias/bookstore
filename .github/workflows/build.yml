@@ -28,6 +28,9 @@ jobs:
       - name: Check Poetry version
         run: poetry --version
 
+      - name: Regenerate lock file
+        run: poetry lock
+
       - name: Install dependencies
         run: poetry install
 
