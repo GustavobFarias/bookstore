@@ -1,1 +1,2 @@
-release: python manage.py migrate
+
+elease: python manage.py migrate
