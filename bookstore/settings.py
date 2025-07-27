@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 
+from debug_toolbar.panels.staticfiles import StaticFile
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECRET_KEY — tenta pegar da variável de ambiente, se não existir usa chave padrão para desenvolvimento
@@ -31,6 +33,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -38,7 +41,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "bookstore.urls"
@@ -60,6 +62,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "bookstore.wsgi.application"
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DATABASES = {
     "default": {
@@ -99,3 +104,4 @@ REST_FRAMEWORK = {
 }
 
 INTERNAL_IPS = ["127.0.0.1"]
+
