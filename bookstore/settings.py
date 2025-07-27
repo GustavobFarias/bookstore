@@ -11,7 +11,7 @@ DEBUG = bool(int(os.environ.get("DEBUG", "1")))
 
 # ALLOWED_HOSTS — tenta pegar da variável de ambiente, se não existir usa lista padrão
 allowed_hosts_env = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost 127.0.0.1 ebac-bookstore-api.herokuapp.com drsantos20.pythonanywhere.com")
-ALLOWED_HOSTS = allowed_hosts_env.split()
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ebac-bookstore-apis.herokuapp.com', 'gfarias.pythonanywhere.com']
 
 # INSTALLED_APPS e demais configurações seguem iguais
 INSTALLED_APPS = [

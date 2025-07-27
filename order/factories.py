@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 import factory
 from django.contrib.auth.models import User
@@ -29,7 +29,7 @@ class OrderFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Order
-=======
+
 import factory
 from django.contrib.auth.models import User
 
@@ -59,4 +59,4 @@ class OrderFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Order
->>>>>>> 902e545 (adicionando o order e product)
+

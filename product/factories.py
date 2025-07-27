@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 import factory
 
@@ -31,7 +31,6 @@ class ProductFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Product
-=======
 import factory
 
 from product.models import Category, Product
@@ -63,4 +62,3 @@ class ProductFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Product
->>>>>>> 902e545 (adicionando o order e product)

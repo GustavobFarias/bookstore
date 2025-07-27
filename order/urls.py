@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 
 #!/usr/bin/env python
@@ -17,7 +17,7 @@ router.register(r"order", viewsets.OrderViewSet, basename="order")
 urlpatterns = [
     path("", include(router.urls)),
 ]
-=======
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -34,4 +34,3 @@ router.register(r"order", viewsets.OrderViewSet, basename="order")
 urlpatterns = [
     path("", include(router.urls)),
 ]
->>>>>>> 902e545 (adicionando o order e product)
