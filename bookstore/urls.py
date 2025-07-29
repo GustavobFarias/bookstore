@@ -18,6 +18,7 @@ from bookstore import views
 from django.contrib import admin
 from django.urls import include, path, re_path
 from rest_framework.authtoken.views import obtain_auth_token
+from django.http import HttpResponse
 
 urlpatterns = [
     path("__debug__/", include(debug_toolbar.urls)),
@@ -27,4 +28,7 @@ urlpatterns = [
     path("api-token-auth/", obtain_auth_token, name="api_token_auth"),
     path("update_server/", views.update, name="update"),
     path("hello/", views.hello_world, name="hello_world"),
+
+    # ✅ Página da raiz
+    path("", lambda request: HttpResponse("🚀 API Bookstore online!"), name="home"),
 ]
