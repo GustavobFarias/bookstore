@@ -7,7 +7,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-f*k@=53bc5!shef1-6w+m
 
 DEBUG = bool(int(os.environ.get("DEBUG", "1")))
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost 127.0.0.1 gfarias.pythonanywhere.com").split()
+ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "django.contrib.admin",
