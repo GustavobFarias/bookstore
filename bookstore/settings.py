@@ -12,8 +12,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-f*k@=53bc5!shef1-6w+m
 DEBUG = bool(int(os.environ.get("DEBUG", "1")))
 
 # ALLOWED_HOSTS — tenta pegar da variável de ambiente, se não existir usa lista padrão
-allowed_hosts_env = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost 127.0.0.1 ebac-bookstore-api.herokuapp.com gfarias.pythonanywhere.com")
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ebac-bookstore-apis.herokuapp.com', 'gfarias.pythonanywhere.com']
+allowed_hosts_env = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost 127.0.0.1 gfarias.pythonanywhere.com")
+ALLOWED_HOSTS = allowed_hosts_env.split()
 
 # INSTALLED_APPS e demais configurações seguem iguais
 INSTALLED_APPS = [

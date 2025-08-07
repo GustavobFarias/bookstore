@@ -4,21 +4,24 @@ from django.views.decorators.csrf import csrf_exempt
 
 import git
 
-import json
 
 @csrf_exempt
 def update(request):
     if request.method == "POST":
-        try:
-            print("🚀 Webhook recebido!")
-            payload = request.body
-            data = json.loads(payload)
-            print("Payload recebido:", data)
+        '''
+        pass the path of the diectory where your project will be
+        stored on PythonAnywhere in the git.Repo() as parameter.
+        Here the name of my directory is "test.pythonanywhere.com"
+        '''
+        repo = git.Repo('/home/GustavobFarias/bookstore')
+        origin = repo.remotes.origin
 
-            repo = git.Repo('/home/gfarias/bookstore')
-            origin = repo.remotes.origin
-            origin.pull()
-            return HttpResponse("✅ Código atualizado com sucesso!", status=200)
-        except Exception as e:
-            return HttpResponse(f"❌ Erro ao atualizar o repositório: {e}", status=500)
-    return HttpResponse("Método não permitido", status=405)
+        origin.pull()
+        return HttpResponse("Updated code on PythonAnywhere")
+    else:
+        return HttpResponse("Couldn't update the code on PythonAnywhere")
+
+
+def hello_world(request):
+    template = loader.get_template('hello_world.html')
+    return HttpResponse(template.render())
